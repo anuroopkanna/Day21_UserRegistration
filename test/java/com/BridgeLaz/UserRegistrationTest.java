@@ -12,6 +12,7 @@ public class UserRegistrationTest {
     public static void init() {
         System.out.println("Before all");
         userRegistration = new UserRegistration();
+    }
         @Test
         void givenFirstnameshouldreturnTrue() {
             boolean value = userRegistration.validateFirstName("Anuroop");
@@ -54,4 +55,3 @@ public class UserRegistrationTest {
             System.out.println("All test case successfully Passed!!!!");
         }
     }
-}
