@@ -13,13 +13,13 @@ public class UserRegistrationTest {
         System.out.println("Before all");
         userRegistration = new UserRegistration();
         @Test
-        void givenFirstnameshouldreturnTrue () {
+        void givenFirstnameshouldreturnTrue() {
             boolean value = userRegistration.validateFirstName("Anuroop");
             Assertions.assertTrue(value);
             System.out.println("First Name Checked:- Successfully passed UC1");
         }
         @Test
-        void givenLastNameShouldReturnTrue () {
+        void givenLastNameShouldReturnTrue() {
             boolean LastName = userRegistration.validateLastname("Pulluru");
             Assertions.assertTrue(LastName);
             System.out.println("Last Name Checked :- Successfully passed UC2");
@@ -35,6 +35,23 @@ public class UserRegistrationTest {
             boolean PhoneNumber = userRegistration.validatPhoneNumber("919032939140");
             Assertions.assertTrue(PhoneNumber);
             System.out.println("PhoneNumber Checked :- Successfully Passed UC4");
+        }
+        @Test
+        void checkPasswordShouldReturnTrue(){
+            boolean Password = userRegistration.validatePassword("Password1@");
+            Assertions.assertTrue(Password);
+            System.out.println("Password Checked(Rule1 & Rule2 & Rule3,Rule4,Rule5) :- Successfully Passes UC5,UC6,UC7,UC8");
+        }
+        @Test
+        void checkEmailShouldReturnTrue(){
+            String Arr[] = {"abc@yahoo.com","abc@yahoo.com","abc-100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com","abc@yahoo.com"};
+            for(int i=0;i< Arr.length;i++)
+            {
+                boolean email = userRegistration.validateEmail(Arr[i]);
+                Assertions.assertTrue(email);
+                System.out.println(i+1+") Email sample Checked");
+            }
+            System.out.println("All test case successfully Passed!!!!");
         }
     }
 }
