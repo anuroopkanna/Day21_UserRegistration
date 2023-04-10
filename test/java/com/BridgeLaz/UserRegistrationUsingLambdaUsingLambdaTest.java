@@ -1,44 +1,45 @@
 package com.BridgeLaz;
 
-import com.BridgeLabz.UserRegistration;
+import com.BridgeLabz.*;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 
-public class UserRegistrationTest {
-    static UserRegistration userRegistration;
+public class UserRegistrationUsingLambdaUsingLambdaTest {
+    static UserRegistrationUsingLambdaUsingLambdaTest userRegistration;
 
     @BeforeAll
     public static void init() {
         System.out.println("Before all");
-        userRegistration = new UserRegistration();
+        userRegistration = new UserRegistrationUsingLambdaUsingLambdaTest();
     }
         @Test
-        void givenFirstnameshouldreturnTrue() {
+        void givenFirstnameshouldreturnTrue() throws FirstNameException {
             boolean value = userRegistration.validateFirstName("Anuroop");
             Assertions.assertTrue(value);
-            System.out.println("First Name Checked:- Successfully passed UC1");
+            System.out.println("First Name Checked");
         }
         @Test
-        void givenLastNameShouldReturnTrue() {
+        void givenLastNameShouldReturnTrue() throws LastNameException {
             boolean LastName = userRegistration.validateLastname("Pulluru");
             Assertions.assertTrue(LastName);
-            System.out.println("Last Name Checked :- Successfully passed UC2");
+            System.out.println("Last Name Checked");
         }
         @Test
-        void givenEmailidShouldReturnTrue () {
+        void givenEmailidShouldReturnTrue () throws EmailException {
             boolean Email = userRegistration.validateEmail("anuroop@gmail.com");
             Assertions.assertTrue(Email);
-            System.out.println("Email ID Checked :- Successfully Passed UC3");
+            System.out.println("Email ID Checked");
         }
-        @Test
-        void givenMobileNumberShouldReturnTrue () {
+    @Test
+        void givenMobileNumberShouldReturnTrue () throws PhoneNumberException {
             boolean PhoneNumber = userRegistration.validatPhoneNumber("919032939140");
             Assertions.assertTrue(PhoneNumber);
-            System.out.println("PhoneNumber Checked :- Successfully Passed UC4");
+            System.out.println("PhoneNumber Checked" +
+                    "");
         }
         @Test
-        void checkPasswordShouldReturnTrue(){
+        void checkPasswordShouldReturnTrue() throws PasswordExpection{
             boolean Password = userRegistration.validatePassword("Password1@");
             Assertions.assertTrue(Password);
             System.out.println("Password Checked(Rule1 & Rule2 & Rule3,Rule4,Rule5) :- Successfully Passes UC5,UC6,UC7,UC8");
