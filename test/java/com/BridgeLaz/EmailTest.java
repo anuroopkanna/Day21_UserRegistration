@@ -1,6 +1,6 @@
 package com.BridgeLaz;
 
-import com.BridgeLabz.UserRegistrationUsingLambda;
+import com.BridgeLabz.UserRegistration;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ import java.util.Collection;
 public class EmailTest {
     private String emailId;
     private boolean expectedResult;
-    private UserRegistrationUsingLambda userRegistration;
+    private UserRegistration userRegistration;
 
     public EmailTest(String emailId, boolean expectedResult) {
         this.emailId = emailId;
@@ -22,7 +22,7 @@ public class EmailTest {
 
     @Before
     public void init() {
-        userRegistration = new UserRegistrationUsingLambda();
+        userRegistration = new UserRegistration();
     }
 
     @Parameterized.Parameters

@@ -1,7 +1,6 @@
 package com.BridgeLabz;
+@FunctionalInterface
+public interface FirstNameException {
+    public  static validateFirstName(String FirstName) throws UserrrRegistrationException;
 
-public class FirstNameException extends Exception{
-    FirstNameException(String str){
-        super(str);
-    }
 }

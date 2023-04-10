@@ -1,8 +1,5 @@
 package com.BridgeLabz;
-
-public class PasswordExpection extends Exception{
-    PasswordExpection (String str)
-    {
-        super(str);
-    }
+@FunctionalInterface
+public interface PasswordExpection {
+public  static validatePassword(String Password) throws UserrrRegistrationException;
 }

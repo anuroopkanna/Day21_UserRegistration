@@ -1,7 +1,5 @@
 package com.BridgeLabz;
-
-public class PhoneNumberException extends Exception{
-    PhoneNumberException (String str){
-        super(str);
-    }
+@FunctionalInterface
+public interface PhoneNumberException {
+    public static validatePhoneNumber(String PhoneNumber) throws UserrrRegistrationException;
 }

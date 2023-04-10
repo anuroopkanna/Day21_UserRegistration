@@ -1,7 +1,5 @@
 package com.BridgeLabz;
-
-public class EmailException extends Exception{
-    EmailException(String str){
-        super(str);
-    }
+@FunctionalInterface
+public interface EmailException {
+    public static validateEmail(String Email) throws UserrrRegistrationException;
 }
